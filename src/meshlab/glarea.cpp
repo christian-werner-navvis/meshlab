@@ -832,12 +832,12 @@ void GLArea::displayInfo(QPainter *painter)
         if ((cfps>0) && (cfps<1999))
             col0Text += QString("FPS: %1\n").arg(cfps,7,'f',1);
 
-        col0Text += renderfacility;
+        col0Text += renderfacility + QString("\n");
 
         if (clipRatioNear!=clipRatioNearDefault())
-            col0Text += QString("\nClipping Near:%1\n").arg(clipRatioNear,7,'f',2);
+            col0Text += QString("Clipping Near:%1\n").arg(clipRatioNear,7,'f',2);
         if (clipRatioFar!=clipRatioFarDefault())
-            col0Text += QString("\nClipping Far:%1\n").arg(clipRatioFar,7,'f',2);
+            col0Text += QString("Clipping Far:%1\n").arg(clipRatioFar,7,'f',2);
         painter->drawText(Column_1, Qt::AlignLeft | Qt::TextWordWrap, col1Text);
         painter->drawText(Column_0, Qt::AlignLeft | Qt::TextWordWrap, col0Text);
         if(mm()->cm.Tr != Matrix44m::Identity() ) displayMatrix(painter, Column_2);
